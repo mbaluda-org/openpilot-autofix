@@ -92,6 +92,7 @@ jobs:
       if: matrix.build-mode == 'manual'
       shell: bash
       run: |
+        tools/op.sh setup
         source .venv/bin/activate
         scons -u
 
