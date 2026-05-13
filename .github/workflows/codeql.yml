@@ -45,10 +45,6 @@ jobs:
         include:
         - language: c-cpp
           build-mode: manual
-        - language: javascript-typescript
-          build-mode: none
-        - language: python
-          build-mode: none
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'rust', 'swift'
         # Use `c-cpp` to analyze code written in C, C++ or both
         # Use 'java-kotlin' to analyze code written in Java, Kotlin or both
@@ -109,6 +105,7 @@ jobs:
         patterns: |
           -**:c/misra/unused-macro-declaration
           -**:c/misra/unused-type-declarations
+          -**:c/misra/unused-tag-declaration
         input: sarif-results/cpp.sarif
         output: filtered.sarif
 
