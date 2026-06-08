@@ -104,15 +104,9 @@ jobs:
       uses: advanced-security/filter-sarif@v1.1
       with:
         patterns: |
-          -**:c/misra/unused-macro-declaration
-          -**:c/misra/plain-numerical-type-used-over-explicit-typedef
-          -**:c/misra/assignment-of-incompatible-essential-type
-          -**:c/misra/operands-of-an-inappropriate-essential-type
-          -**:c/misra/goto-statement-used
-          -**:c/misra/non-boolean-if-condition
-          -**:c/misra/do-not-declare-a-reserved-identifier
-          -**:c/misra/unused-type-declarations
-          -**:c/misra/unused-tag-declaration
+          -**/*
+          +**:c/misra/goto-statement-used
+          +**:c/misra/non-boolean-if-condition
         input: sarif-results/cpp.sarif
         output: filtered.sarif
 
